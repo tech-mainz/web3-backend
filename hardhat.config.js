@@ -1,4 +1,5 @@
 require("@matterlabs/hardhat-zksync-solc");
+require("@nomiclabs/hardhat-waffle");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -24,6 +25,11 @@ module.exports = {
       chainId: 324,
       zksync: true,
     },
+    hardhat: {},
+    polygon_mumbai: {
+      url: "https://polygon-mumbai.g.alchemy.com/v2/DcBnDhuJqPggFzQ4Tc3CFy2WVlzPvnTR",
+      accounts: [`0x${"67a62ee46a04f24036d83a088faf0598952e813b5c7266e45da7061c1faad418"}`]
+    }
   },
   paths: {
     artifacts: "./artifacts-zk",
@@ -39,6 +45,10 @@ module.exports = {
       goerli: {
         url:'https://rpc.ankr.com/eth_goerli',
         accounts: [`0x${process.env.PRIVATE_KEY}`]
+      },
+      polygon_mumbai: {
+        url: "https://polygon-mumbai.g.alchemy.com/v2/DcBnDhuJqPggFzQ4Tc3CFy2WVlzPvnTR",
+        accounts: [`0x${"67a62ee46a04f24036d83a088faf0598952e813b5c7266e45da7061c1faad418"}`]
       }
     },
     settings: {
